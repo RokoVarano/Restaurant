@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var ImageminPlugin = require('imagemin-webpack-plugin').default
 const path = require('path');
 module.exports = {
   mode: 'development',
@@ -15,6 +16,12 @@ module.exports = {
         hash: true,
         filename: './index.html', //relative to root of the application
         template: './src/index.html'
+    }),
+    new ImageminPlugin({
+      disable: process.env.NODE_ENV !== 'production', // Disable during development
+      pngquant: {
+        quality: '95-100'
+      }
     })
   ],
   module: {
@@ -27,6 +34,19 @@ module.exports = {
         path.resolve(__dirname, 'node_modules')
       ],
       loader: 'babel-loader',
+    },
+    {
+      test: /\.(png|jp(e*)g|svg)$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'pictures/[hash]-[name].[ext]',
+            publicPath: '/',
+          }
+        }
+      ]
     }]
   },
   resolve: {
