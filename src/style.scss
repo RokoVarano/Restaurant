@@ -1,5 +1,7 @@
 @import 'styles/custom.scss';
 
+//mobile
+
 .flex-mid-col {
   display: flex;
   justify-content: center;
@@ -39,13 +41,63 @@ body {
     background: red;
 
     article {
-      height: 15em;
+      height: 30em;
       background: pink;
       margin: 0 1.5em;
+
+      h3 {
+        height: 40%;
+        background-color: green;
+        margin: 0
+      }
+
+      .picture {
+        height: 60%;
+        background-color: yellow;
+      }
     }
   }
 }
 
 #footer {
-  
+  background-color: black;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+
+  #address {
+    padding: 0 1.5em;
+    background-color: red;
+  }
+
+  #contact-info {
+    padding: 0 1.5em;
+    background-color: red;
+  }
+}
+
+//full screen
+
+@media only screen and (min-width: 721px) {
+
+  #main{
+    #services {
+      article {
+        flex-direction: row;
+
+        h3 {
+          height: 100%;
+          width: 40%;
+          background-color: green;
+        }
+
+        .picture {
+          height: 100%;
+          width: 60%;
+          background-color: yellow;
+        }
+      }
+    }
+  }
+
 }
