@@ -1,6 +1,26 @@
 @import 'styles/custom.scss';
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&display=swap');
 
 //mobile
+
+$h-font: 'Dancing Script', cursive;
+$p-font: 'Amatic SC', cursive;
+
+:root {
+  font-family: $h-font;
+}
+
+p {
+  font-family: $p-font;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
 
 .flex-mid-col {
   display: flex;
@@ -30,10 +50,13 @@ body {
     h1 {
       height: 60%;
       background-color: goldenrod;
+      font-size: 1000%;
+      margin: 0;
     }
 
     h3 {
       height: 40%;
+      font-size: 300%;
     }
   }
 
@@ -44,11 +67,12 @@ body {
       height: 30em;
       background: pink;
       margin: 0 1.5em;
+      justify-content: start;
 
       h3 {
         height: 40%;
         background-color: green;
-        margin: 0
+        font-size: 300%;
       }
 
       .picture {
@@ -64,6 +88,8 @@ body {
   width: 100%;
   bottom: 0;
   left: 0;
+  font-family: $p-font;
+  font-size: 200%;
 
   #address {
     padding: 0 1.5em;
@@ -73,6 +99,8 @@ body {
   #contact {
     padding: 0 1.5em;
     background-color: red;
+    list-style-type: none;
+    margin-top: 0;
   }
 }
 
@@ -81,6 +109,12 @@ body {
 @media only screen and (min-width: 721px) {
 
   #main{
+    #header {
+      h3 {
+        font-size: 500%;
+      }
+    }
+
     #services {
       article {
         flex-direction: row;
