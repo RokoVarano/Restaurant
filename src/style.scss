@@ -6,7 +6,9 @@
 $h-font: 'Dancing Script', cursive;
 $p-font: 'Amatic SC', cursive;
 
-$wood-color: #CDB140;
+$wood-color: #cdb14086;
+$milky-color: rgba(255, 255, 255, 0.616);
+$black-smoke-color: #00000077;
 
 :root {
   font-family: $h-font;
@@ -37,23 +39,24 @@ h3 {
 
 body {
   margin: 0;
-  background-color: rgb(23, 23, 48);
+  background-position: top right;
+  background-size: cover;
 }
 
 #main {
   padding: 1.5em;
   width: 90%;
-  background-color: green;
 
   #header {
     height: 20em;
-    background-color: yellow;
+    background-color: $wood-color;
 
     h1 {
       height: 60%;
-      background-color: goldenrod;
       font-size: 1000%;
       margin: 0;
+      background-color: $milky-color;
+      width: 100%;
     }
 
     h3 {
@@ -63,7 +66,7 @@ body {
   }
 
   #services {
-    background: red;
+    background: $milky-color;
 
     article {
       height: 30em;
@@ -71,12 +74,12 @@ body {
       justify-content: start;
       background-position: top right;
       background-size: cover;
-      border: 2px solid $wood-color;
+      border: 10px solid $wood-color;
 
       h3 {
         height: 40%;
-        background-color: green;
-        font-size: 280%;
+        background-color: $milky-color;
+        font-size: 260%;
         padding: 0.5em;
       }
 
@@ -88,7 +91,7 @@ body {
 }
 
 #footer {
-  background-color: black;
+  background-color: $black-smoke-color;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -97,7 +100,7 @@ body {
   color: white;
 
   #address {
-    background-color: red;
+    background-color: $black-smoke-color;
 
     img {
       width: 100%;
@@ -106,7 +109,7 @@ body {
 
   #contact {
     padding: 0 1.5em;
-    background-color: red;
+    background-color: $black-smoke-color;
     list-style-type: none;
     margin-top: 0;
   }
@@ -128,10 +131,10 @@ body {
         flex-direction: row;
 
         h3 {
-          height: 90%;
+          height: 70%;
           width: 40%;
-          background-color: green;
-          padding: 0;
+          background-color: $milky-color;
+          padding: 1em;;
           margin-left: 5%;
         }
 

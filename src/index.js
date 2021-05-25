@@ -1,6 +1,7 @@
 import dinnerpic from './assets/pictures/restaurant-dinner.jpg';
 import bugs from './assets/pictures/bugs.jpg';
 import map from './assets/pictures/map.png';
+import jungle from './assets/pictures/jungle.jpg';
 import "./style.scss";
 
 const d = document
@@ -11,6 +12,7 @@ const divider = parent => {
   parent.appendChild(divider);
 }
 const body = d.querySelector('body');
+body.style.backgroundImage = `url(${jungle})`;
 body.classList.add('flex-mid-col');
 
 const main = d.createElement('div');
