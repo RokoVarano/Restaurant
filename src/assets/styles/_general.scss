@@ -1,0 +1,56 @@
+@import './_global';
+
+#content {
+  #header {
+    height: 20em;
+    background-color: $wood-color;
+
+    h1 {
+      height: 60%;
+      font-size: 1000%;
+      margin: 0;
+      background-color: $milky-color;
+      width: 100%;
+    }
+
+    h3 {
+      height: 40%;
+      font-size: 300%;
+    }
+  }
+}
+
+#footer {
+  background-color: $black-smoke-color;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-family: $p-font;
+  font-size: 200%;
+  color: white;
+
+  #address {
+    background-color: $black-smoke-color;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  #contact {
+    padding: 0 1.5em;
+    background-color: $black-smoke-color;
+    list-style-type: none;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 721px) {
+  #content {
+    #header {
+      h3 {
+        font-size: 500%;
+      }
+    }
+  }
+}
