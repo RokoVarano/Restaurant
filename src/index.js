@@ -1,4 +1,6 @@
-import cuadro1_jpeg from './assets/pictures/cuadro1.jpeg';
+import dinnerpic from './assets/pictures/restaurant-dinner.jpg';
+import bugs from './assets/pictures/bugs.jpg';
+import map from './assets/pictures/map.png';
 import "./style.scss";
 
 const d = document
@@ -37,12 +39,12 @@ divider(main);
 const services = d.createElement('section');
 services.id = 'services';
 main.appendChild(services);
-
 divider(services);
 
 const venues = d.createElement('article');
 venues.id = 'venues'
 venues.classList.add('flex-mid-col');
+venues.style.backgroundImage = `url(${dinnerpic})`
 services.appendChild(venues);
 
 const venues_h3 = d.createElement('h3')
@@ -50,25 +52,18 @@ venues_h3.id = 'venues_h3';
 venues_h3.textContent = '"Ample, yet intimate dining rooms for couples and family groups."'
 venues.appendChild(venues_h3);
 
-const venues_pic = d.createElement('div');
-venues_pic.id = 'venues_pic';
-venues.appendChild(venues_pic);
-
 divider(services);
 
 const dishes = d.createElement('article');
 dishes.id = 'dishes'
 dishes.classList.add('flex-mid-col');
+dishes.style.backgroundImage = `url(${bugs})`
 services.appendChild(dishes);
 
 const dishes_h3 = d.createElement('h3')
 dishes_h3.id = 'dishes_h3';
 dishes_h3.textContent = '"Exotic dishes featuring organicly grown insects and bugs, delicately served by international native chefs"';
 dishes.appendChild(dishes_h3);
-
-const dishes_pic = d.createElement('div');
-dishes_pic.id = 'dishes_pic';
-dishes.appendChild(dishes_pic);
 
 divider(services);
 
@@ -79,11 +74,12 @@ body.appendChild(footer);
 
 const address = d.createElement('figure');
 address.id = 'address';
+address.classList.add('flex-mid-col');
 footer.appendChild(address);
 
 const add_map = d.createElement('img');
 add_map.id = 'add_map';
-// img.src = 
+add_map.src = map;
 address.appendChild(add_map);
 
 const add_caption = d.createElement('figcaption');

@@ -6,6 +6,8 @@
 $h-font: 'Dancing Script', cursive;
 $p-font: 'Amatic SC', cursive;
 
+$wood-color: #CDB140;
+
 :root {
   font-family: $h-font;
 }
@@ -65,19 +67,21 @@ body {
 
     article {
       height: 30em;
-      background: pink;
       margin: 0 1.5em;
       justify-content: start;
+      background-position: top right;
+      background-size: cover;
+      border: 2px solid $wood-color;
 
       h3 {
         height: 40%;
         background-color: green;
-        font-size: 300%;
+        font-size: 280%;
+        padding: 0.5em;
       }
 
-      .picture {
-        height: 60%;
-        background-color: yellow;
+      #dishes_h3 {
+        font-size: 220%;
       }
     }
   }
@@ -90,10 +94,14 @@ body {
   left: 0;
   font-family: $p-font;
   font-size: 200%;
+  color: white;
 
   #address {
-    padding: 0 1.5em;
     background-color: red;
+
+    img {
+      width: 100%;
+    }
   }
 
   #contact {
@@ -120,15 +128,15 @@ body {
         flex-direction: row;
 
         h3 {
-          height: 100%;
+          height: 90%;
           width: 40%;
           background-color: green;
+          padding: 0;
+          margin-left: 5%;
         }
 
-        .picture {
-          height: 100%;
-          width: 60%;
-          background-color: yellow;
+        #dishes_h3 {
+          font-size: 220%;
         }
       }
     }
