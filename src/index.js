@@ -15,9 +15,7 @@ const body = d.querySelector('body');
 body.style.backgroundImage = `url(${jungle})`;
 body.classList.add('flex-mid-col');
 
-const main = d.createElement('div');
-main.id = 'main';
-body.appendChild(main);
+const main = d.querySelector('#content');
 
 const header = d.createElement('section');
 header.id = 'header';
