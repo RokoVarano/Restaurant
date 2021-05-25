@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Restaurant Project
 
 > This project corresponds to the Restaurant solo project for Javascript.
 
