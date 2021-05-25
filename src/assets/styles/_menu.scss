@@ -1,0 +1,39 @@
+@import './global';
+
+.menu_container {
+  background-color: $milky-color;
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 150%;
+  width: 90%;
+  max-width: 720px;
+
+  figure {
+    height: 7em;
+    display: flex;
+    border: 0.5em solid $wood-color;
+    background-color: white;
+    margin: 0;
+
+    img {
+      height: 7em;
+      width: 7em;
+      object-fit: cover;
+      object-position: center;
+      margin-right: 1.5em;
+    }
+
+    figcaption {
+      margin: 0 1.5em 0 0;
+
+      h3 {
+        font-family: $p-font;
+        font-weight: bolder;
+      }
+
+      p {
+        margin: 0.5em 0 0 0;
+      }
+    }
+  }
+}

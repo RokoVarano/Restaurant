@@ -4,6 +4,7 @@
   height: 20em;
   background-color: $wood-color;
   border-radius: 50%;
+  width: 100%;
 
   h1 {
     height: 50%;
@@ -15,7 +16,7 @@
   }
 
   h3 {
-    font-size: 250%;
+    font-size: 200%;
   }
 }
 
@@ -46,6 +47,8 @@
 
 @media only screen and (min-width: 721px) {
   #header {
+    max-width: 800px;
+
     h3 {
       font-size: 400%;
     }
