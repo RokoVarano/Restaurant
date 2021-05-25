@@ -33,7 +33,7 @@
     "build": "webpack",
     "start:dev": "webpack-dev-server",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm webpack serve"
   },
   "repository": {
     "type": "git",
