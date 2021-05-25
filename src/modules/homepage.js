@@ -4,31 +4,32 @@ import {
   d, divider,
 } from './general';
 
-const article = (text, pic, parent) => {
+const article = (text, pic) => {
   const dishes = d.createElement('article');
   dishes.id = 'dishes';
   dishes.classList.add('flex-mid-col');
   dishes.style.backgroundImage = `url(${pic})`;
-  parent.appendChild(dishes);
 
   const dishesH3 = d.createElement('h3');
   dishesH3.id = 'dishes_h3';
   dishesH3.textContent = text;
   dishes.appendChild(dishesH3);
+  return dishes;
 };
 
-export default function services(parent) {
+export default function services() {
   const services = d.createElement('section');
   services.id = 'services';
-  parent.appendChild(services);
 
-  divider(services);
+  services.appendChild(divider());
 
-  article('"Ample, yet intimate dining rooms for couples and family groups."', dinnerpic, services);
+  services.appendChild(article('"Ample, yet intimate dining rooms for couples and family groups."', dinnerpic));
 
-  divider(services);
+  services.appendChild(divider());
 
-  article('"Exotic dishes featuring organicly grown insects and bugs, delicately served by international native chefs"', bugs, services);
+  services.appendChild(article('"Exotic dishes featuring organicly grown insects and bugs, delicately served by international native chefs"', bugs));
 
-  divider(services);
+  services.appendChild(divider());
+
+  return services;
 }

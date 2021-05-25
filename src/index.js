@@ -4,6 +4,7 @@ import {
   d, divider, header, footer,
 } from './modules/general';
 import services from './modules/homepage';
+import navbar from './modules/navbar';
 
 const body = d.querySelector('body');
 body.style.backgroundImage = `url(${jungle})`;
@@ -11,12 +12,16 @@ body.classList.add('flex-mid-col');
 
 const main = d.querySelector('#content');
 
-header(main, 'Aracne', 'Exotic Arthropod Cuisine');
+main.appendChild(navbar());
 
-divider(main);
+main.appendChild(divider());
 
-services(main);
+main.appendChild(header('Aracne', 'Exotic Arthropod Cuisine'));
 
-divider(main);
+main.appendChild(divider());
 
-footer(body);
+main.appendChild(services());
+
+main.appendChild(divider());
+
+body.appendChild(footer());

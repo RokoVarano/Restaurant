@@ -2,24 +2,23 @@ import map from '../assets/pictures/map.png';
 
 export const d = document;
 
-const contactInfo = (name, text, parent) => {
+const contactInfo = (name, text) => {
   const item = d.createElement('li');
   item.id = `${name}`;
   item.textContent = text;
-  parent.appendChild(item);
+  return item;
 };
 
-export function divider(parent) {
+export function divider() {
   const divider = d.createElement('div');
   divider.classList.add('divider');
-  parent.appendChild(divider);
+  return divider;
 }
 
-export function header(parent, title, subtitle) {
+export function header(title, subtitle) {
   const header = d.createElement('section');
   header.id = 'header';
   header.classList.add('flex-mid-col');
-  parent.appendChild(header);
 
   const headerH1 = d.createElement('h1');
   headerH1.id = 'header_h1';
@@ -32,13 +31,14 @@ export function header(parent, title, subtitle) {
   headerH3.classList.add('flex-mid-col');
   headerH3.textContent = subtitle;
   header.appendChild(headerH3);
+
+  return header;
 }
 
-export function footer(parent) {
+export function footer() {
   const footer = d.createElement('footer');
   footer.id = 'footer';
   footer.classList.add('flex-mid-col');
-  parent.appendChild(footer);
 
   const address = d.createElement('figure');
   address.id = 'address';
@@ -59,7 +59,9 @@ export function footer(parent) {
   contact.id = 'contact';
   footer.appendChild(contact);
 
-  contactInfo('phone', 'Phone: +1 7893 8765', contact);
+  contact.appendChild(contactInfo('phone', 'Phone: +1 7893 8765'));
 
-  contactInfo('email', 'Email: aracne@jokemail.com', contact);
+  contact.appendChild(contactInfo('email', 'Email: aracne@jokemail.com'));
+
+  return footer;
 }
