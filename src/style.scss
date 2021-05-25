@@ -8,7 +8,7 @@ $p-font: 'Amatic SC', cursive;
 
 $wood-color: #cdb14086;
 $milky-color: rgba(255, 255, 255, 0.616);
-$black-smoke-color: #00000077;
+$black-smoke-color: rgba(41, 26, 3, 0.507);
 
 :root {
   font-family: $h-font;
@@ -118,8 +118,7 @@ body {
 //full screen
 
 @media only screen and (min-width: 721px) {
-
-  #main{
+  #main {
     #header {
       h3 {
         font-size: 500%;
@@ -134,7 +133,7 @@ body {
           height: 70%;
           width: 40%;
           background-color: $milky-color;
-          padding: 1em;;
+          padding: 1em;
           margin-left: 5%;
         }
 
@@ -144,5 +143,4 @@ body {
       }
     }
   }
-
 }

@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-var ImageminPlugin = require('imagemin-webpack-plugin').default
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const path = require('path');
+
 module.exports = {
   mode: 'production',
   entry: path.join(__dirname, 'src', 'index'),
@@ -8,30 +9,30 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/Restaurant/',
-    filename: "index.js",
-    chunkFilename: '[name].js'
+    filename: 'index.js',
+    chunkFilename: '[name].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-        hash: true,
-        filename: './index.html', //relative to root of the application
-        template: './src/index.html'
+      hash: true,
+      filename: './index.html', // relative to root of the application
+      template: './src/index.html',
     }),
     new ImageminPlugin({
       disable: process.env.NODE_ENV !== 'production', // Disable during development
       pngquant: {
-        quality: '95-100'
-      }
-    })
+        quality: '95-100',
+      },
+    }),
   ],
   module: {
     rules: [{
       test: /.jsx?$/,
       include: [
-        path.resolve(__dirname, 'src')
+        path.resolve(__dirname, 'src'),
       ],
       exclude: [
-        path.resolve(__dirname, 'node_modules')
+        path.resolve(__dirname, 'node_modules'),
       ],
       loader: 'babel-loader',
     },
@@ -44,19 +45,19 @@ module.exports = {
             limit: 8000,
             name: 'pictures/[hash]-[name].[ext]',
             publicPath: '/',
-          }
-        }
-      ]
-    },      
+          },
+        },
+      ],
+    },
     {
       test: /\.s[ac]ss$/i,
       use: [
         // Creates `style` nodes from JS strings
-        "style-loader",
+        'style-loader',
         // Translates CSS into CommonJS
-        "css-loader",
+        'css-loader',
         // Compiles Sass to CSS
-        "sass-loader",
+        'sass-loader',
       ],
     },
     {
@@ -66,15 +67,15 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: 'fonts/[name].[ext]',
-            publicPath: '/'
-          }
-        }
-      ]
-    }
-  ]
+            publicPath: '/',
+          },
+        },
+      ],
+    },
+    ],
   },
   resolve: {
-    extensions: ['.json', '.js', '.jsx']
+    extensions: ['.json', '.js', '.jsx'],
   },
   devtool: 'source-map',
   devServer: {
@@ -82,5 +83,5 @@ module.exports = {
     inline: true,
     host: 'localhost',
     port: 8080,
-  }
+  },
 };

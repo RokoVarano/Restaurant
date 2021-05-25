@@ -2,15 +2,15 @@ import dinnerpic from './assets/pictures/restaurant-dinner.jpg';
 import bugs from './assets/pictures/bugs.jpg';
 import map from './assets/pictures/map.png';
 import jungle from './assets/pictures/jungle.jpg';
-import "./style.scss";
+import './style.scss';
 
-const d = document
+const d = document;
 
-const divider = parent => {
+const divider = (parent) => {
   const divider = d.createElement('div');
   divider.classList.add('divider');
   parent.appendChild(divider);
-}
+};
 const body = d.querySelector('body');
 body.style.backgroundImage = `url(${jungle})`;
 body.classList.add('flex-mid-col');
@@ -24,17 +24,17 @@ header.id = 'header';
 header.classList.add('flex-mid-col');
 main.appendChild(header);
 
-const header_h1 = d.createElement('h1');
-header_h1.id = 'header_h1';
-header_h1.classList.add('flex-mid-col');
-header_h1.textContent = 'Aracne';
-header.appendChild(header_h1);
+const headerH1 = d.createElement('h1');
+headerH1.id = 'header_h1';
+headerH1.classList.add('flex-mid-col');
+headerH1.textContent = 'Aracne';
+header.appendChild(headerH1);
 
-const header_h3 = d.createElement('h3');
-header_h3.id = 'header_h3';
-header_h3.classList.add('flex-mid-col');
-header_h3.textContent = 'Exotic arthropod cuisine';
-header.appendChild(header_h3);
+const headerH3 = d.createElement('h3');
+headerH3.id = 'header_h3';
+headerH3.classList.add('flex-mid-col');
+headerH3.textContent = 'Exotic arthropod cuisine';
+header.appendChild(headerH3);
 
 divider(main);
 
@@ -44,28 +44,28 @@ main.appendChild(services);
 divider(services);
 
 const venues = d.createElement('article');
-venues.id = 'venues'
+venues.id = 'venues';
 venues.classList.add('flex-mid-col');
-venues.style.backgroundImage = `url(${dinnerpic})`
+venues.style.backgroundImage = `url(${dinnerpic})`;
 services.appendChild(venues);
 
-const venues_h3 = d.createElement('h3')
-venues_h3.id = 'venues_h3';
-venues_h3.textContent = '"Ample, yet intimate dining rooms for couples and family groups."'
-venues.appendChild(venues_h3);
+const venuesH3 = d.createElement('h3');
+venuesH3.id = 'venues_h3';
+venuesH3.textContent = '"Ample, yet intimate dining rooms for couples and family groups."';
+venues.appendChild(venuesH3);
 
 divider(services);
 
 const dishes = d.createElement('article');
-dishes.id = 'dishes'
+dishes.id = 'dishes';
 dishes.classList.add('flex-mid-col');
-dishes.style.backgroundImage = `url(${bugs})`
+dishes.style.backgroundImage = `url(${bugs})`;
 services.appendChild(dishes);
 
-const dishes_h3 = d.createElement('h3')
-dishes_h3.id = 'dishes_h3';
-dishes_h3.textContent = '"Exotic dishes featuring organicly grown insects and bugs, delicately served by international native chefs"';
-dishes.appendChild(dishes_h3);
+const dishesH3 = d.createElement('h3');
+dishesH3.id = 'dishes_h3';
+dishesH3.textContent = '"Exotic dishes featuring organicly grown insects and bugs, delicately served by international native chefs"';
+dishes.appendChild(dishesH3);
 
 divider(services);
 
@@ -79,15 +79,15 @@ address.id = 'address';
 address.classList.add('flex-mid-col');
 footer.appendChild(address);
 
-const add_map = d.createElement('img');
-add_map.id = 'add_map';
-add_map.src = map;
-address.appendChild(add_map);
+const addMap = d.createElement('img');
+addMap.id = 'add_map';
+addMap.src = map;
+address.appendChild(addMap);
 
-const add_caption = d.createElement('figcaption');
-add_caption.id = 'add_caption';
-add_caption.textContent = 'Imaginary Street 123, NoWhere City'
-address.appendChild(add_caption);
+const addCaption = d.createElement('figcaption');
+addCaption.id = 'add_caption';
+addCaption.textContent = 'Imaginary Street 123, NoWhere City';
+address.appendChild(addCaption);
 
 const contact = d.createElement('ul');
 contact.id = 'contact';
@@ -95,13 +95,10 @@ footer.appendChild(contact);
 
 const phone = d.createElement('li');
 phone.id = 'phone';
-phone.textContent = 'Phone: +1 7893 8765'
+phone.textContent = 'Phone: +1 7893 8765';
 contact.appendChild(phone);
 
 const email = d.createElement('li');
 email.id = 'email';
-email.textContent = 'Email: aracne@jokemail.com'
+email.textContent = 'Email: aracne@jokemail.com';
 contact.appendChild(email);
-
-
-
