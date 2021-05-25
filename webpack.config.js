@@ -2,12 +2,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 var ImageminPlugin = require('imagemin-webpack-plugin').default
 const path = require('path');
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: path.join(__dirname, 'src', 'index'),
   watch: true,
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
+    publicPath: '/Restaurant/',
     filename: "index.js",
     chunkFilename: '[name].js'
   },
