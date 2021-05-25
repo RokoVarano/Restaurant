@@ -29,4 +29,6 @@ export default function services(parent) {
   divider(services);
 
   article('"Exotic dishes featuring organicly grown insects and bugs, delicately served by international native chefs"', bugs, services);
+
+  divider(services);
 }
