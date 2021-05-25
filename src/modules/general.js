@@ -2,6 +2,13 @@ import map from '../assets/pictures/map.png';
 
 export const d = document;
 
+const contactInfo = (name, text, parent) => {
+  const item = d.createElement('li');
+  item.id = `${name}`;
+  item.textContent = text;
+  parent.appendChild(item);
+};
+
 export function divider(parent) {
   const divider = d.createElement('div');
   divider.classList.add('divider');
@@ -52,13 +59,7 @@ export function footer(parent) {
   contact.id = 'contact';
   footer.appendChild(contact);
 
-  const phone = d.createElement('li');
-  phone.id = 'phone';
-  phone.textContent = 'Phone: +1 7893 8765';
-  contact.appendChild(phone);
+  contactInfo('phone', 'Phone: +1 7893 8765', contact);
 
-  const email = d.createElement('li');
-  email.id = 'email';
-  email.textContent = 'Email: aracne@jokemail.com';
-  contact.appendChild(email);
+  contactInfo('email', 'Email: aracne@jokemail.com', contact);
 }
