@@ -31,7 +31,8 @@ This project requieres Javascript, SASS, NODE.js and webpack
 ### Setup
 - Clone the project
 - Go to the Clone's directory
-- Run npx webpack serve
+- Run 'npm run build'. Local dist folder will be created.
+- Run 'npx webpack serve'
 - in your browser, go to localhost:8080
 ### Usage
 There are no available links or interactive features. However, the page is responsive at 720px width.
