@@ -18,7 +18,7 @@ Features:
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://rokovarano.github.io/Restaurant/)
 
 
 ## Getting Started
