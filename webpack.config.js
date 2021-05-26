@@ -8,7 +8,7 @@ module.exports = {
   watch: true,
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/restaurant/',
+    publicPath: '',
     filename: 'index.js',
     chunkFilename: '[name].js',
   },
