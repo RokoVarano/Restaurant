@@ -30,7 +30,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
     "build": "webpack",
+    "heroku-postbuild": "webpack -p",
     "start:dev": "webpack-dev-server",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
