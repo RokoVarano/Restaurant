@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Restaurant Project
 
 > This project corresponds to the Restaurant solo project for Javascript.
 
@@ -18,7 +18,7 @@ Features:
 
 ## Live Demo
 
-[Live Demo Link](https://rokovarano.github.io/Restaurant/)
+[Live Demo Link](https://sharp-euclid-ff33e5.netlify.app/)
 
 
 ## Getting Started

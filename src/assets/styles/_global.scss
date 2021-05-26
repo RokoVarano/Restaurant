@@ -1,0 +1,45 @@
+$h-font: 'Dancing Script', cursive;
+$p-font: 'Amatic SC', cursive;
+
+$wood-color: rgb(145, 120, 92);
+$leaf-color: rgb(135, 141, 44);
+$milky-color: rgba(255, 255, 255, 0.616);
+$black-smoke-color: rgba(41, 26, 3, 0.507);
+
+:root {
+  font-family: $h-font;
+}
+
+p {
+  font-family: $p-font;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+.flex-mid-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divider {
+  height: 1.5em;
+}
+
+body {
+  margin: 0;
+  background-position: top right;
+  background-size: contain;
+}
+
+#content {
+  padding: 1.5em;
+  width: 90%;
+}

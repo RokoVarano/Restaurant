@@ -1,0 +1,45 @@
+@import "./global";
+
+#services {
+  background: $milky-color;
+
+  article {
+    height: 30em;
+    margin: 0 1.5em;
+    justify-content: start;
+    background-position: top right;
+    background-size: cover;
+    border: 10px solid $wood-color;
+
+    h3 {
+      height: 40%;
+      background-color: $milky-color;
+      font-size: 260%;
+      padding: 0.5em;
+    }
+
+    #dishes_h3 {
+      font-size: 220%;
+    }
+  }
+}
+
+@media only screen and (min-width: 721px) {
+  #services {
+    article {
+      flex-direction: row;
+
+      h3 {
+        height: 70%;
+        width: 40%;
+        background-color: $milky-color;
+        padding: 1em;
+        margin-left: 5%;
+      }
+
+      #dishes_h3 {
+        font-size: 220%;
+      }
+    }
+  }
+}
