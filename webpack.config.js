@@ -8,7 +8,7 @@ module.exports = {
   watch: true,
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/Restaurant/',
+    publicPath: '',
     filename: 'index.js',
     chunkFilename: '[name].js',
   },
@@ -44,7 +44,7 @@ module.exports = {
           options: {
             limit: 8000,
             name: 'pictures/[hash]-[name].[ext]',
-            publicPath: '/',
+            publicPath: '',
           },
         },
       ],
@@ -67,7 +67,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: 'fonts/[name].[ext]',
-            publicPath: '/',
+            publicPath: '',
           },
         },
       ],
