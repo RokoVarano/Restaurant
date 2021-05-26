@@ -1,87 +1,62 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const path = require('path');
+// Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-module.exports = {
-  mode: 'production',
-  entry: path.join(__dirname, 'src', 'index'),
-  watch: true,
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+const stylesHandler = MiniCssExtractPlugin.loader;
+
+const config = {
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '',
-    filename: 'index.js',
-    chunkFilename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  devServer: {
+    open: true,
+    host: 'localhost',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      hash: true,
-      filename: './index.html', // relative to root of the application
-      template: './src/index.html',
+      template: 'src/index.html',
     }),
-    new ImageminPlugin({
-      disable: process.env.NODE_ENV !== 'production', // Disable during development
-      pngquant: {
-        quality: '95-100',
-      },
-    }),
+
+    new MiniCssExtractPlugin(),
+
+    // Add your plugins here
+    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
-    rules: [{
-      test: /.jsx?$/,
-      include: [
-        path.resolve(__dirname, 'src'),
-      ],
-      exclude: [
-        path.resolve(__dirname, 'node_modules'),
-      ],
-      loader: 'babel-loader',
-    },
-    {
-      test: /\.(png|jp(e*)g|svg)$/,
-      use: [
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 8000,
-            name: 'pictures/[hash]-[name].[ext]',
-            publicPath: '',
-          },
-        },
-      ],
-    },
-    {
-      test: /\.s[ac]ss$/i,
-      use: [
-        // Creates `style` nodes from JS strings
-        'style-loader',
-        // Translates CSS into CommonJS
-        'css-loader',
-        // Compiles Sass to CSS
-        'sass-loader',
-      ],
-    },
-    {
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: 'fonts/[name].[ext]',
-            publicPath: '',
-          },
-        },
-      ],
-    },
+    rules: [
+      {
+        test: /\.(js|jsx)$/i,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [stylesHandler, 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      {
+        test: /\.css$/i,
+        use: [stylesHandler, 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        type: 'asset',
+      },
+
+      // Add your rules for custom modules here
+      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
-  resolve: {
-    extensions: ['.json', '.js', '.jsx'],
-  },
-  devtool: 'source-map',
-  devServer: {
-    contentBase: path.join(__dirname, '/dist/'),
-    inline: true,
-    host: 'localhost',
-    port: 8080,
-  },
+};
+
+module.exports = () => {
+  if (isProduction) {
+    config.mode = 'production';
+  } else {
+    config.mode = 'development';
+  }
+  return config;
 };
